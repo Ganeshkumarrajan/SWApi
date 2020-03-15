@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.ganesh.swapi.ui.category.ClickEvent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="300dp">
+
+        <RadioGroup
+            android:id="@+id/rdg_search_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rdo_people"
+                style="@style/radio_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{ (v) ->callback.onTaped(v)}"
+                android:text="@string/people" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rdo_planets"
+                style="@style/radio_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{ (v) ->callback.onTaped(v)}"
+                android:text="@string/planets" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rdo_star_wars"
+                style="@style/radio_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{ (v) ->callback.onTaped(v)}"
+                android:text="@string/star_wars" />
+
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

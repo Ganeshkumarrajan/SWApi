@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="callback"
+            type="com.ganesh.swapi.ui.category.ClickEvent" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/constrain_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/srch_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/search_by" />
+
+        <Button
+            android:id="@+id/btn_search_by"
+            style="@style/button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{ (v) ->callback.onTaped(v)}"
+            android:text="@string/search_by"
+            app:layout_constraintTop_toBottomOf="@+id/srch_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
